@@ -29,7 +29,7 @@ const CollapsibleSection = ({ title, defaultOpen, children, className }) => {
   };
 
   return (
-    <div className={className}>
+    <div className="border-b-2">
       <div
         className={barCN}
         onClick={() => setIsOpen(!isOpen)}
