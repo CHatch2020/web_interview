@@ -64,7 +64,7 @@ const Dropdown = ({
   onChange,
   isDisabled,
 }) => (
-  <div className="w-96 mr-6 mb-6">
+  <div className="w-96 mb-6">
     {label && <p className={labelCN}>{label}</p>}
     <Select
       theme={customTheme}

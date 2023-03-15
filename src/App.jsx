@@ -28,7 +28,7 @@ const App = () => {
 
           <CollapsibleSection title="Overview">
             <div className="flex justify-between content-between">
-              <div>
+              <div className="pr-6">
                 <Dropdown
                   options={Array(5)
                     .fill()
@@ -37,7 +37,7 @@ const App = () => {
                       value: `Option ${index + 1}`,
                     }))}
                   label="Company Name"
-                  placeholder="placeholder"
+                  placeholder="Company Name"
                 />
 
                 <Dropdown
@@ -48,71 +48,61 @@ const App = () => {
                       value: `Option ${index + 1}`,
                     }))}
                   label="Subscription"
-                  placeholder="placeholder"
+                  placeholder="Subscription"
                 />
               </div>
 
-              <Input label="eSpace Name" placeholder="eSpace Name" />
+              <Input
+                className="ml-6"
+                label="eSpace Name"
+                placeholder="eSpace Name"
+              />
             </div>
           </CollapsibleSection>
 
           <CollapsibleSection title="Owner Information">
             <div className="flex justify-between content-between">
               <div>
-                <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
-                  label="Company Name"
-                  placeholder="placeholder"
-                />
+                <Input label="Primary Owner" placeholder="Primary Owner" />
 
-                <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
-                  label="Subscription"
-                  placeholder="placeholder"
+                <Input
+                  label="Primary Owner Phone"
+                  placeholder="Primary Owner Phone"
                 />
               </div>
 
-              <Input label="eSpace Name" placeholder="eSpace Name" />
+              <Input
+                className="pl-8"
+                label="Primary Owner Email"
+                placeholder="Primary Owner Email"
+              />
             </div>
           </CollapsibleSection>
 
           <CollapsibleSection title="Location Information">
             <div className="flex justify-between content-between">
               <div>
-                <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
-                  label="Company Name"
-                  placeholder="placeholder"
-                />
+                <Input label="Street Address" placeholder="Street Address" />
 
-                <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
-                  label="Subscription"
-                  placeholder="placeholder"
-                />
+                <Input label="Suite/Unit" placeholder="Suite/Unit" />
+
+                <Input label="Postal Code" placeholder="Postal Code" />
               </div>
 
-              <Input label="eSpace Name" placeholder="eSpace Name" />
+              <div>
+                <Input label="City" placeholder="City" />
+
+                <Dropdown
+                  options={Array(5)
+                    .fill()
+                    .map((a, index) => ({
+                      label: `Option ${index + 1}`,
+                      value: `Option ${index + 1}`,
+                    }))}
+                  label="Country"
+                  placeholder="Country"
+                />
+              </div>
             </div>
           </CollapsibleSection>
 
