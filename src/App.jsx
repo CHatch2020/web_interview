@@ -8,8 +8,8 @@ import ProgressTracker from "./stories/Components/ProgressTracker/ProgressTracke
 import NavBar from "./stories/Components/NavBar/NavBar";
 
 const App = () => {
-  // const [company, setCompany] = useState([]);
-  // const [sub, setSub] = useState([]);
+  const [company, setCompany] = useState([]);
+  const [sub, setSub] = useState([]);
   const [name, setName] = useState([]);
   const [owner, setOwner] = useState([]);
   const [phone, setPhone] = useState([]);
@@ -18,10 +18,26 @@ const App = () => {
   const [suite, setSuite] = useState([]);
   const [postal, setPostal] = useState([]);
   const [city, setCity] = useState([]);
-  // const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState([]);
 
   const trackerArray = ["ClIENT INFO", "LOGO", "BRANDING", "APP STORE"];
+  const companyArray = [
+    "Microsoft",
+    "EscapeSpace",
+    "Apple",
+    "REIS Contracting, INC",
+  ];
+  const subArray = ["Novice", "Intermediate", "Advanced", "Elite"];
+  const countryArray = ["Germany", "Brazil", "United States", "Tokyo"];
 
+  const companyChange = (e) => {
+    setCompany(e);
+    console.log(e);
+  };
+  const subChange = (e) => {
+    setSub(e);
+    // console.log(e);
+  };
   const nameChange = (e) => {
     setName(e);
     // console.log(e);
@@ -54,27 +70,14 @@ const App = () => {
     setCity(e);
     // console.log(e);
   };
-
-  const handleClick = () => {
-    let userInfo = {
-      eSpaceName: name,
-      owner: {
-        owner: owner,
-        phone: phone,
-        email: email,
-      },
-      location: {
-        street: street,
-        suite: suite,
-        city: city,
-        postal: postal,
-      },
-    };
-    console.log(userInfo);
-    clearInputs();
+  const countryChange = (e) => {
+    setCountry(e);
+    // console.log(e);
   };
 
-  let clearInputs = () => {
+  const clearInputs = () => {
+    setCompany(null);
+    setSub(null);
     setName("");
     setOwner("");
     setPhone("");
@@ -83,6 +86,29 @@ const App = () => {
     setSuite("");
     setPostal("");
     setCity("");
+    setCountry(null);
+  };
+
+  const handleClick = () => {
+    const userInfo = {
+      eSpaceName: name,
+      companyName: company,
+      subscription: sub,
+      owner: {
+        o: owner,
+        p: phone,
+        e: email,
+      },
+      location: {
+        s: street,
+        su: suite,
+        c: city,
+        co: country,
+        p: postal,
+      },
+    };
+    console.log(userInfo);
+    clearInputs();
   };
 
   return (
@@ -103,25 +129,25 @@ const App = () => {
             <div className="flex justify-between content-between">
               <div className="pr-6">
                 <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
+                  options={companyArray.map((index) => ({
+                    label: `${index}`,
+                    value: `${index}`,
+                  }))}
                   label="Company Name"
                   placeholder="Company Name"
+                  value={company}
+                  onChange={companyChange}
                 />
 
                 <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
+                  options={subArray.map((index) => ({
+                    label: `${index}`,
+                    value: `${index}`,
+                  }))}
                   label="Subscription"
                   placeholder="Subscription"
+                  value={sub}
+                  onChange={subChange}
                 />
               </div>
 
@@ -205,14 +231,14 @@ const App = () => {
                 />
 
                 <Dropdown
-                  options={Array(5)
-                    .fill()
-                    .map((a, index) => ({
-                      label: `Option ${index + 1}`,
-                      value: `Option ${index + 1}`,
-                    }))}
+                  options={countryArray.map((index) => ({
+                    label: `${index}`,
+                    value: `${index}`,
+                  }))}
                   label="Country"
                   placeholder="Country"
+                  value={country}
+                  onChange={countryChange}
                 />
               </div>
             </div>
