@@ -17,7 +17,7 @@ const titleCN = cntl`
   font-semibold
 `;
 
-const CollapsibleSection = ({ title, defaultOpen, children, className }) => {
+const CollapsibleSection = ({ title, defaultOpen, children }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const toggleOpen = () => setIsOpen(!isOpen);
@@ -64,14 +64,14 @@ CollapsibleSection.propTypes = {
   /**
    * optional className to add to the container
    */
-  className: PropTypes.string,
+  // className: PropTypes.string,
 };
 
 CollapsibleSection.defaultProps = {
   title: null,
   defaultOpen: false,
   children: null,
-  className: null,
+  // className: null,
 };
 
 export default CollapsibleSection;

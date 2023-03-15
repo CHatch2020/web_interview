@@ -11,11 +11,14 @@ const containerCN = cntl`
   items-center
   justify-between
   px-3
+  w-screen
+  fixed
+  z-20
 `;
 
 const logoContainerCN = cntl`
   m-3
-  ml-0
+  ml-2
   flex
   items-center
   cursor-pointer
@@ -34,6 +37,7 @@ const estatespaceTextCN = cntl`
 const actionIconContainerCN = cntl`
   hidden
   lg:flex
+  mr-2 
   ml-2
   flex-initial
   items-center
@@ -101,7 +105,7 @@ const NavBar = ({ onLogoutClick, onLogoClick, avatar }) => {
           )}
         </button>
         {showMenu && (
-          <div className="absolute top-16 right-2 z-50 bg-gray-300 flex flex-col">
+          <div className="top-16 right-2 z-50 bg-gray-300 flex flex-col">
             <button
               className={menuButtonCN}
               type="button"
