@@ -13,8 +13,11 @@ const App = () => {
       <div>
         <NavBar />
 
-        <div className="p-10 ml-8 w-3/5">
+        <div className="p-10 pt-24 ml-8 w-3/5">
           <div>
+            <div>
+              <p className="mb-6">Back</p>
+            </div>
             <p>ADD NEW CLIENT</p>
             <ProgressTracker
               steps={Array(5)

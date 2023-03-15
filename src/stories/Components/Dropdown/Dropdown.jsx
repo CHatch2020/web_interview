@@ -55,7 +55,6 @@ const labelCN = cntl`
 `;
 
 const Dropdown = ({
-  className,
   label,
   options,
   placeholder,
@@ -65,7 +64,7 @@ const Dropdown = ({
   onChange,
   isDisabled,
 }) => (
-  <div className={className}>
+  <div className="w-96 mr-6 mb-6">
     {label && <p className={labelCN}>{label}</p>}
     <Select
       theme={customTheme}
@@ -91,7 +90,7 @@ Dropdown.propTypes = {
   /**
    * classes to apply to the container div
    */
-  className: PropTypes.string,
+  // className: PropTypes.string,
   /**
    * the options that will be displayed in the dropdown (label, value pairs)
    */
@@ -127,7 +126,7 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  className: null,
+  // className: null,
   options: [],
   label: null,
   placeholder: "Select an option...",

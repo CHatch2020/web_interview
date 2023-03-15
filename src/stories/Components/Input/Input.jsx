@@ -5,6 +5,8 @@ import cntl from "cntl";
 import CrossButton from "../CrossButton/CrossButton";
 
 const containerCN = (className) => cntl`
+  w-96
+  ml-6
   min-w-0
   ${className}
 `;
