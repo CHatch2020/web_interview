@@ -175,7 +175,7 @@ const App = () => {
 
                 <Input
                   label="Primary Owner Phone"
-                  type="text"
+                  type="number"
                   placeholder="Primary Owner Phone"
                   value={phone}
                   onChange={phoneChange}
@@ -214,7 +214,7 @@ const App = () => {
 
                 <Input
                   label="Postal Code"
-                  type="text"
+                  type="number"
                   placeholder="Postal Code"
                   value={postal}
                   onChange={postalChange}
