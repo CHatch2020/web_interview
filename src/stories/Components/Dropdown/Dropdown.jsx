@@ -67,12 +67,7 @@ const Dropdown = ({
   disableClear,
   isRequired,
 }) => (
-  <div
-    className={styles(
-      value.length > 0 && !disableClear,
-      value.length === 0 && isRequired
-    )}
-  >
+  <div>
     {label && <p className={labelCN}>{label}</p>}
     {isRequired && (
       <>
@@ -81,10 +76,7 @@ const Dropdown = ({
       </>
     )}
     <Select
-      className={styles(
-        value.length > 0 && !disableClear,
-        value.length === 0 && isRequired
-      )}
+      className={styles(value > 0 && !disableClear, value === 0 && isRequired)}
       theme={customTheme}
       styles={customStyles}
       isClearable={isClearable}
