@@ -4,6 +4,12 @@ import Select from "react-select";
 import cntl from "cntl";
 import { BRAND_GREEN } from "../../../constants";
 
+const styles = (isShowingClear, isRequired) => cntl`
+w-96 mb-6
+${isRequired ? "border-brandRed" : "border-gray-200"}
+${isShowingClear ? "pr-3" : ""}
+`;
+
 const customStyles = {
   control: (base) => ({
     ...base,
@@ -18,11 +24,6 @@ const customStyles = {
     fontWeight: 400,
     fontStyle: "italic",
     color: "white",
-  }),
-  menu: (base) => ({
-    ...base,
-    borderColor: "rgba(166, 166, 166, var(--tw-border-opacity))",
-    borderWidth: "1px",
   }),
 };
 
@@ -63,10 +64,27 @@ const Dropdown = ({
   isClearable,
   onChange,
   isDisabled,
+  disableClear,
+  isRequired,
 }) => (
-  <div className="w-96 mb-6">
+  <div
+    className={styles(
+      value.length > 0 && !disableClear,
+      value.length === 0 && isRequired
+    )}
+  >
     {label && <p className={labelCN}>{label}</p>}
+    {isRequired && (
+      <>
+        <p className="text-brandGreen text-sm">*</p>
+        <p className="text-brandRed italic ml-2">Required</p>
+      </>
+    )}
     <Select
+      className={styles(
+        value.length > 0 && !disableClear,
+        value.length === 0 && isRequired
+      )}
       theme={customTheme}
       styles={customStyles}
       isClearable={isClearable}
@@ -76,6 +94,7 @@ const Dropdown = ({
       value={value}
       onChange={(val) => onChange({ label: val?.label, value: val?.value })}
       isDisabled={isDisabled}
+      isRequired={isRequired}
       maxMenuHeight={250}
     />
   </div>
@@ -110,7 +129,9 @@ Dropdown.propTypes = {
   /**
    * controls the value in the dropdown
    */
-  value: optionPropType,
+  value: PropTypes.oneOfType(
+    optionPropType[(PropTypes.string, PropTypes.number)]
+  ),
   /**
    * toggles whether the field presents UI to clear it
    */
@@ -123,6 +144,10 @@ Dropdown.propTypes = {
    * disables the dropdown
    */
   isDisabled: PropTypes.bool,
+
+  disableClear: PropTypes.bool,
+
+  isRequired: PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
@@ -135,6 +160,8 @@ Dropdown.defaultProps = {
   isClearable: true,
   onChange: null,
   isDisabled: false,
+  disableClear: false,
+  isRequired: false,
 };
 
 export default Dropdown;

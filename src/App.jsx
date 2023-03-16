@@ -148,6 +148,7 @@ const App = () => {
                   placeholder="Subscription"
                   value={sub}
                   onChange={subChange}
+                  isRequired
                 />
               </div>
 
