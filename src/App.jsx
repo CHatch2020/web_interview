@@ -158,6 +158,7 @@ const App = () => {
                 placeholder="eSpace Name"
                 value={name}
                 onChange={nameChange}
+                isRequired
               />
             </div>
           </CollapsibleSection>
@@ -171,6 +172,7 @@ const App = () => {
                   placeholder="Primary Owner"
                   value={owner}
                   onChange={ownerChange}
+                  isRequired
                 />
 
                 <Input
@@ -179,6 +181,7 @@ const App = () => {
                   placeholder="Primary Owner Phone"
                   value={phone}
                   onChange={phoneChange}
+                  isRequired
                 />
               </div>
 
@@ -189,6 +192,7 @@ const App = () => {
                 placeholder="Primary Owner Email"
                 value={email}
                 onChange={emailChange}
+                isRequired
               />
             </div>
           </CollapsibleSection>
@@ -202,6 +206,7 @@ const App = () => {
                   placeholder="Street Address"
                   value={street}
                   onChange={streetChange}
+                  isRequired
                 />
 
                 <Input
@@ -218,6 +223,7 @@ const App = () => {
                   placeholder="Postal Code"
                   value={postal}
                   onChange={postalChange}
+                  isRequired
                 />
               </div>
 
@@ -228,6 +234,7 @@ const App = () => {
                   placeholder="City"
                   value={city}
                   onChange={cityChange}
+                  isRequired
                 />
 
                 <Dropdown
