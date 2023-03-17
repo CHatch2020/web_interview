@@ -30,51 +30,6 @@ const App = () => {
   const subArray = ["Novice", "Intermediate", "Advanced", "Elite"];
   const countryArray = ["Germany", "Brazil", "United States", "Tokyo"];
 
-  const companyChange = (e) => {
-    setCompany(e);
-    console.log(e);
-  };
-  const subChange = (e) => {
-    setSub(e);
-    // console.log(e);
-  };
-  const nameChange = (e) => {
-    setName(e);
-    // console.log(e);
-  };
-  const ownerChange = (e) => {
-    setOwner(e);
-    // console.log(e);
-  };
-  const phoneChange = (e) => {
-    setPhone(e);
-    // console.log(e);
-  };
-  const emailChange = (e) => {
-    setEmail(e);
-    // console.log(e);
-  };
-  const streetChange = (e) => {
-    setStreet(e);
-    // console.log(e);
-  };
-  const suiteChange = (e) => {
-    setSuite(e);
-    // console.log(e);
-  };
-  const postalChange = (e) => {
-    setPostal(e);
-    // console.log(e);
-  };
-  const cityChange = (e) => {
-    setCity(e);
-    // console.log(e);
-  };
-  const countryChange = (e) => {
-    setCountry(e);
-    // console.log(e);
-  };
-
   const clearInputs = () => {
     setCompany(null);
     setSub(null);
@@ -136,7 +91,7 @@ const App = () => {
                   label="Company Name"
                   placeholder="Company Name"
                   value={company}
-                  onChange={companyChange}
+                  onChange={(e) => setCompany(e)}
                 />
 
                 <Dropdown
@@ -147,7 +102,7 @@ const App = () => {
                   label="Subscription"
                   placeholder="Subscription"
                   value={sub}
-                  onChange={subChange}
+                  onChange={(e) => setSub(e)}
                   isRequired
                 />
               </div>
@@ -158,7 +113,7 @@ const App = () => {
                 type="text"
                 placeholder="eSpace Name"
                 value={name}
-                onChange={nameChange}
+                onChange={(e) => setName(e)}
                 isRequired
               />
             </div>
@@ -172,7 +127,7 @@ const App = () => {
                   type="text"
                   placeholder="Primary Owner"
                   value={owner}
-                  onChange={ownerChange}
+                  onChange={(e) => setOwner(e)}
                   isRequired
                 />
 
@@ -181,7 +136,7 @@ const App = () => {
                   type="number"
                   placeholder="Primary Owner Phone"
                   value={phone}
-                  onChange={phoneChange}
+                  onChange={(e) => setPhone(e)}
                   isRequired
                 />
               </div>
@@ -192,7 +147,7 @@ const App = () => {
                 type="text"
                 placeholder="Primary Owner Email"
                 value={email}
-                onChange={emailChange}
+                onChange={(e) => setEmail(e)}
                 isRequired
               />
             </div>
@@ -206,7 +161,7 @@ const App = () => {
                   type="text"
                   placeholder="Street Address"
                   value={street}
-                  onChange={streetChange}
+                  onChange={(e) => setStreet(e)}
                   isRequired
                 />
 
@@ -215,7 +170,7 @@ const App = () => {
                   type="text"
                   placeholder="Suite/Unit"
                   value={suite}
-                  onChange={suiteChange}
+                  onChange={(e) => setSuite(e)}
                 />
 
                 <Input
@@ -223,7 +178,7 @@ const App = () => {
                   type="number"
                   placeholder="Postal Code"
                   value={postal}
-                  onChange={postalChange}
+                  onChange={(e) => setPostal(e)}
                   isRequired
                 />
               </div>
@@ -234,7 +189,7 @@ const App = () => {
                   type="text"
                   placeholder="City"
                   value={city}
-                  onChange={cityChange}
+                  onChange={(e) => setCity(e)}
                   isRequired
                 />
 
@@ -246,7 +201,7 @@ const App = () => {
                   label="Country"
                   placeholder="Country"
                   value={country}
-                  onChange={countryChange}
+                  onChange={(e) => setCountry(e)}
                 />
               </div>
             </div>
