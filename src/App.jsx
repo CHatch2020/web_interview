@@ -6,6 +6,7 @@ import Input from "./stories/Components/Input/Input";
 import Dropdown from "./stories/Components/Dropdown/Dropdown";
 import ProgressTracker from "./stories/Components/ProgressTracker/ProgressTracker";
 import NavBar from "./stories/Components/NavBar/NavBar";
+import Chevron from "./stories/Components/Chevron/Chevron";
 
 const App = () => {
   const [company, setCompany] = useState([]);
@@ -73,8 +74,9 @@ const App = () => {
 
         <div className="p-10 pt-24 ml-8 w-3/5">
           <div>
-            <div>
-              <p className="mb-6">Back</p>
+            <div className="flex items-baseline">
+              <Chevron className="w-4 h-4 transform rotate-180" />
+              <p className="ml-4 mb-6">Back</p>
             </div>
             <p>ADD NEW CLIENT</p>
             <ProgressTracker steps={trackerArray.map((index) => `${index}`)} />
