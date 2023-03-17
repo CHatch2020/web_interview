@@ -4,7 +4,7 @@ import Select from "react-select";
 import cntl from "cntl";
 import { BRAND_GREEN } from "../../../constants";
 
-const styles = (isShowingClear, isRequired) => cntl`
+const stylesCN = (isShowingClear, isRequired) => cntl`
 w-96 mb-6
 ${isRequired ? "border-brandRed" : "border-gray-200"}
 ${isShowingClear ? "pr-3" : ""}
@@ -50,6 +50,7 @@ const customTheme = (base) => ({
 });
 
 const labelCN = cntl`
+  flex
   mb-2
   text-base
   text-gray-200
@@ -68,27 +69,37 @@ const Dropdown = ({
   isRequired,
 }) => (
   <div>
-    {label && <p className={labelCN}>{label}</p>}
-    {isRequired && (
-      <>
-        <p className="text-brandGreen text-sm">*</p>
-        <p className="text-brandRed italic ml-2">Required</p>
-      </>
+    {label && (
+      <div className={labelCN}>
+        <p>{label}</p>
+        {isRequired && (
+          <>
+            <p className="text-brandGreen text-sm">*</p>
+            <p className="text-brandRed italic ml-2">Required</p>
+          </>
+        )}
+      </div>
     )}
-    <Select
-      className={styles(value > 0 && !disableClear, value === 0 && isRequired)}
-      theme={customTheme}
-      styles={customStyles}
-      isClearable={isClearable}
-      options={options}
-      placeholder={placeholder}
-      defaultValue={defaultValue}
-      value={value}
-      onChange={(val) => onChange({ label: val?.label, value: val?.value })}
-      isDisabled={isDisabled}
-      isRequired={isRequired}
-      maxMenuHeight={250}
-    />
+    <div
+      className={stylesCN(
+        value > 0 && !disableClear,
+        value === 0 && isRequired
+      )}
+    >
+      <Select
+        theme={customTheme}
+        styles={customStyles}
+        isClearable={isClearable}
+        options={options}
+        placeholder={placeholder}
+        defaultValue={defaultValue}
+        value={value}
+        onChange={(val) => onChange({ label: val?.label, value: val?.value })}
+        isDisabled={isDisabled}
+        isRequired={isRequired}
+        maxMenuHeight={250}
+      />
+    </div>
   </div>
 );
 
