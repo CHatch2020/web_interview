@@ -9,8 +9,8 @@ import NavBar from "./stories/Components/NavBar/NavBar";
 import Chevron from "./stories/Components/Chevron/Chevron";
 
 const App = () => {
-  const [company, setCompany] = useState([]);
-  const [sub, setSub] = useState([]);
+  const [company, setCompany] = useState(0);
+  const [sub, setSub] = useState(0);
   const [name, setName] = useState([]);
   const [owner, setOwner] = useState([]);
   const [phone, setPhone] = useState([]);
@@ -19,7 +19,7 @@ const App = () => {
   const [suite, setSuite] = useState([]);
   const [postal, setPostal] = useState([]);
   const [city, setCity] = useState([]);
-  const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState(0);
 
   const trackerArray = ["ClIENT INFO", "LOGO", "BRANDING", "APP STORE"];
   const companyArray = [
@@ -83,8 +83,8 @@ const App = () => {
           </div>
 
           <CollapsibleSection title="Overview">
-            <div className="flex justify-between content-between">
-              <div className="pr-6">
+            <div className="grid grid-cols-2 grid-rows-1 justify-items-stretch space-x-10 border-b-2">
+              <div>
                 <Dropdown
                   options={companyArray.map((index) => ({
                     label: `${index}`,
@@ -122,7 +122,7 @@ const App = () => {
           </CollapsibleSection>
 
           <CollapsibleSection title="Owner Information">
-            <div className="flex justify-between content-between">
+            <div className="grid grid-cols-2 grid-rows-1 justify-items-stretch space-x-10 border-b-2">
               <div>
                 <Input
                   label="Primary Owner"
@@ -144,7 +144,6 @@ const App = () => {
               </div>
 
               <Input
-                className="pl-8"
                 label="Primary Owner Email"
                 type="text"
                 placeholder="Primary Owner Email"
@@ -156,7 +155,7 @@ const App = () => {
           </CollapsibleSection>
 
           <CollapsibleSection title="Location Information">
-            <div className="flex justify-between content-between">
+            <div className="grid grid-cols-2 grid-rows-1 justify-items-stretch space-x-10">
               <div>
                 <Input
                   label="Street Address"
@@ -209,7 +208,7 @@ const App = () => {
             </div>
           </CollapsibleSection>
 
-          <Button onClick={handleClick} title="Button" />
+          <Button onClick={handleClick} title="Save" />
         </div>
       </div>
     </div>

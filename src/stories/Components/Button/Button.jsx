@@ -6,6 +6,8 @@ import Spinner from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const buttonCN = ({ className, typedClassNames }) => cntl`
+  mt-20
+  w-32
   flex
   justify-center
   py-3

@@ -5,9 +5,8 @@ import cntl from "cntl";
 import CrossButton from "../CrossButton/CrossButton";
 
 const containerCN = (className) => cntl`
-  w-96
   mb-6
-  min-w-0
+  min-w-m0
   ${className}
 `;
 
@@ -17,7 +16,6 @@ const inputContainerCN = (isShowingClear, isRequired) => cntl`
   min-w-0
   border
   ${isRequired ? "border-brandRed" : "border-gray-200"}
-  rounded
   ${isShowingClear ? "pr-3" : ""}
 `;
 
