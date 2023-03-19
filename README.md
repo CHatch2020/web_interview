@@ -17,7 +17,7 @@
 
 I was given the task to create a form that was functional and identical to the provided screenshot using premade components provided in the repository.
 
-<img src="" />## Built With
+Built With
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" height="40px" width="40px" /></a><a href="https://nodejs.org/en/"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" height="40px" width="40px" /></a>
 
