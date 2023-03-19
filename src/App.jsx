@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import ReactDOM from "react-dom";
 import Button from "./stories/Components/Button/Button";
 import CollapsibleSection from "./stories/Components/CollapsibleSection/CollapsibleSection";
@@ -7,8 +7,12 @@ import Dropdown from "./stories/Components/Dropdown/Dropdown";
 import ProgressTracker from "./stories/Components/ProgressTracker/ProgressTracker";
 import NavBar from "./stories/Components/NavBar/NavBar";
 import Chevron from "./stories/Components/Chevron/Chevron";
+import reducer from "./stories/Components/Reducer/useFormReducer";
 
 const App = () => {
+  const [state, dispatch] = useReducer(reducer);
+  console.log(state, "in app");
+
   const [company, setCompany] = useState(0);
   const [sub, setSub] = useState(0);
   const [name, setName] = useState([]);
@@ -46,24 +50,26 @@ const App = () => {
   };
 
   const handleClick = () => {
-    const userInfo = {
-      eSpaceName: name,
-      companyName: company,
-      subscription: sub,
-      owner: {
-        o: owner,
-        p: phone,
-        e: email,
+    dispatch({
+      type: "INFO",
+      payload: {
+        e: name,
+        comp: company,
+        su: sub,
+        own: {
+          n: owner,
+          pho: phone,
+          em: email,
+        },
+        l: {
+          st: street,
+          sui: suite,
+          ci: city,
+          cou: country,
+          post: postal,
+        },
       },
-      location: {
-        s: street,
-        su: suite,
-        c: city,
-        co: country,
-        p: postal,
-      },
-    };
-    console.log(userInfo);
+    });
     clearInputs();
   };
 

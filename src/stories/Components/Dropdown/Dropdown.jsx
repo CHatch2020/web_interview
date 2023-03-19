@@ -69,8 +69,6 @@ const Dropdown = ({
   disableClear,
   isRequired,
 }) => {
-  console.log({ value, isRequired, disableClear });
-  console.log(stylesCN(value > 0 && !disableClear, value === 0 && isRequired));
   return (
     <div>
       {label && (
