@@ -98,6 +98,9 @@ const Dropdown = ({
         isDisabled={isDisabled}
         isRequired={isRequired}
         maxMenuHeight={250}
+        components={{
+          IndicatorSeparator: () => null,
+        }}
       />
     </div>
   </div>
